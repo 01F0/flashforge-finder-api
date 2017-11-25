@@ -1,0 +1,6 @@
+request_control_message = '~M601 S1\r\n'
+request_info_message = '~M115\r\n'
+request_head_position = '~M114\r\n'
+request_temp = '~M105\r\n'
+request_progress = '~M27\r\n'
+request_status = '~M119\r\n'
