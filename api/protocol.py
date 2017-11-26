@@ -67,9 +67,12 @@ def get_progress(printer_address):
     regex_groups = re.search(regex_for_progress(), info_result).groups()
     printed = regex_groups[0]
     total = regex_groups[1]
-    percentage = int((int(printed) / int(total)) * 100)
 
-    return {'BytesPrinted': printed, 'BytesTotal': total, 'PercentageCompleted': percentage}
+    percentage = 0 if total is '0' else int((int(printed) / int(total)) * 100)
+
+    return {'BytesPrinted': printed,
+            'BytesTotal': total,
+            'PercentageCompleted': percentage}
 
 
 def get_status(printer_address):
