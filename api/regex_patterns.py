@@ -1,7 +1,7 @@
 def regex_for_field(field_name):
     """Machine Type: Flashforge Finder"""
 
-    return field_name + ':?(.+?)\\r\\n'
+    return field_name + ': ?(.+?)\\r\\n'
 
 
 def regex_for_coordinates(field_name):
