@@ -29,19 +29,17 @@ Example output:
 
 How to get it running?
 =======================
-1. Specify the printer IP address + port in api/webapi.py
-
-2. Make sure you have Flask installed:
+1. Make sure you have Flask installed:
 
   pip install Flask
 
-3. Run it like this (make sure you're in the /api folder)
+2. Run it like this (make sure you're in the /api folder)
 
   FLASK_APP=webapi.py flask run
 
 The environment assignment may differ depending on which shell you're running.
 
-4. By default, you should now have access to the API at localhost:5000. Try http://localhost:5000/info to see if you get any info from the printer.
+3. By default, you should now have access to the API at localhost:5000. Try http://localhost:5000/*{printer IP address}*/info to see if you get any info from the printer.
 
 What information does the API give me?
 =======================
