@@ -7,10 +7,10 @@ from protocol import get_status
 from flask import Flask
 from flask import jsonify
 
-
+from flask_cors import CORS
 app = Flask(__name__)
+CORS(app)
 
-IP_ADDRESS = 'REPLACE_ME'
 PORT = 8899  # default port
 
 
@@ -19,31 +19,31 @@ def index():
     return ''
 
 
-@app.route("/info")
-def info():
-    printer_info = get_info({'ip': IP_ADDRESS, 'port': PORT})
+@app.route("/<string:ip_address>/info")
+def info(ip_address):
+    printer_info = get_info({'ip': ip_address, 'port': PORT})
     return jsonify(printer_info)
 
 
-@app.route("/head-location")
-def head_location():
-    printer_info = get_head_position({'ip': IP_ADDRESS, 'port': PORT})
+@app.route("/<string:ip_address>/head-location")
+def head_location(ip_address):
+    printer_info = get_head_position({'ip': ip_address, 'port': PORT})
     return jsonify(printer_info)
 
 
-@app.route("/temp")
-def temp():
-    printer_info = get_temp({'ip': IP_ADDRESS, 'port': PORT})
+@app.route("/<string:ip_address>/temp")
+def temp(ip_address):
+    printer_info = get_temp({'ip': ip_address, 'port': PORT})
     return jsonify(printer_info)
 
 
-@app.route("/progress")
-def progress():
-    printer_info = get_progress({'ip': IP_ADDRESS, 'port': PORT})
+@app.route("/<string:ip_address>/progress")
+def progress(ip_address):
+    printer_info = get_progress({'ip': ip_address, 'port': PORT})
     return jsonify(printer_info)
 
 
-@app.route("/status")
-def status():
-    printer_info = get_status({'ip': IP_ADDRESS, 'port': PORT})
+@app.route("/<string:ip_address>/status")
+def status(ip_address):
+    printer_info = get_status({'ip': ip_address, 'port': PORT})
     return jsonify(printer_info)
