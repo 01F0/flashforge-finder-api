@@ -36,6 +36,10 @@ How to get it running?
 2. Run it like this (make sure you're in the /api folder)
 
   FLASK_APP=webapi.py flask run
+  
+Alternatively, use this to make it visible outside localhost. More info here: https://github.com/01F0/flashforge-finder-api/issues/1
+  
+  FLASK_APP=webapi.py flask run --host=0.0.0.0 --port=5000
 
 The environment assignment may differ depending on which shell you're running.
 
