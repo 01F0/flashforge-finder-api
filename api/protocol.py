@@ -71,7 +71,7 @@ def get_progress(printer_address):
     if total == 0:
         percentage = 0
     else:
-        percentage = float(printed / total) * 100
+        percentage = int(float(printed) / total * 100)
 
     return {'BytesPrinted': printed,
             'BytesTotal': total,
