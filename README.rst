@@ -31,15 +31,19 @@ How to get it running?
 =======================
 1. Make sure you have Flask installed:
 
-  pip install Flask
+  pip install flask
+  
+and 
+  
+  pip install flask-cors
 
 2. Run it like this (make sure you're in the /api folder)
 
-  FLASK_APP=webapi.py flask run
+  env FLASK_APP=webapi.py flask run --without-threads
   
 Alternatively, use this to make it visible outside localhost. More info here: https://github.com/01F0/flashforge-finder-api/issues/1
   
-  FLASK_APP=webapi.py flask run --host=0.0.0.0 --port=5000
+  env FLASK_APP=webapi.py flask run --host=0.0.0.0 --port=5000 --without-threads
 
 The environment assignment may differ depending on which shell you're running.
 
