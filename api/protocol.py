@@ -65,10 +65,13 @@ def get_progress(printer_address):
     info_result = send_and_receive(printer_address, request_progress)
 
     regex_groups = re.search(regex_for_progress(), info_result).groups()
-    printed = regex_groups[0]
-    total = regex_groups[1]
+    printed = int(regex_groups[0])
+    total = int(regex_groups[1])
 
-    percentage = 0 if total is '0' else int((int(printed) / int(total)) * 100)
+    if total == 0:
+        percentage = 0
+    else:
+        percentage = float(printed / total) * 100
 
     return {'BytesPrinted': printed,
             'BytesTotal': total,
