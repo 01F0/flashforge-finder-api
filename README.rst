@@ -11,7 +11,7 @@ This API is done solely by reverse engineering.
 
 How does it work?
 =======================
-You specify the printer IP address + port in api/webapi.py, then simply start the Flask app.
+You specify the printer IP address + port in api/app.py, then simply start the Flask app.
 This will spawn a lightweight HTTP server which exposes the API functions.
 
 Example output:
@@ -27,7 +27,7 @@ Example output:
     "X": " 140  Y: 140  Z: 140"
   }
 
-How to get it running?
+Start it on your machine
 =======================
 1. Make sure you have Flask installed:
 
@@ -37,17 +37,23 @@ and
   
   pip install flask-cors
 
-2. Run it like this (make sure you're in the /api folder)
-
-  env FLASK_APP=webapi.py flask run --without-threads
+2. Add this environment variable:
   
-Alternatively, use this to make it visible outside localhost. More info here: https://github.com/01F0/flashforge-finder-api/issues/1
-  
-  env FLASK_APP=webapi.py flask run --host=0.0.0.0 --port=5000 --without-threads
+  CMD: set FLASK_APP=app.py 
+  Unix Bash: export FLASKAPP=app.py
+  PowerShell: $env:FLASK_APP=app.py
 
-The environment assignment may differ depending on which shell you're running.
+3. Run it:
 
-3. By default, you should now have access to the API at localhost:5000. Try http://localhost:5000/*{printer IP address}*/info to see if you get any info from the printer.
+  flask run --host=0.0.0.0 --port=5000 --without-threads
+
+4. By default, you should now have access to the API at localhost:5000. Try http://localhost:5000/*{printer IP address}*/info to see if you get any info from the printer.
+
+Start it using Docker
+=====================
+1. Run this (you might need sudo):
+
+  docker build --tag flashforge-api . && docker run --publish 5000:5000 flashforge-api
 
 What information does the API give me?
 =======================
