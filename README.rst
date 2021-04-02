@@ -39,9 +39,11 @@ and
 
 2. Add this environment variable:
   
-  CMD: set FLASK_APP=app.py 
-  Unix Bash: export FLASKAPP=app.py
-  PowerShell: $env:FLASK_APP=app.py
+  **CMD**: set FLASK_APP=app.py 
+  
+  **Unix Bash**: export FLASKAPP=app.py
+  
+  **PowerShell**: $env:FLASK_APP=app.py
 
 3. Run it:
 
