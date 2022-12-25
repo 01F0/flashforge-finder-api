@@ -33,11 +33,7 @@ Example output:
 # Start it on your machine
 1. Make sure you have Flask installed:
 
-    `pip install flask`
-  
-    and 
-  
-    `pip install flask-cors`
+    `pip3 install -r requirements.txt`
 
 2. Add this environment variable:
   
