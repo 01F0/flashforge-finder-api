@@ -32,7 +32,7 @@ If your printer runs on a different port (default `8899`), you can change the se
 # Run it as a Docker container
 Run this:
 
-    `docker build --tag flashforge-api . && docker run --publish 5000:5000 flashforge-api`
+`docker build --tag flashforge-api . && docker run --publish 5000:5000 flashforge-api`
 
 # Start it on your machine
 1. Make sure you have Flask installed:
