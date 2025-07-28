@@ -5,9 +5,11 @@ It is served with Flask to make it as easy as possible to create your own UI.
 
 Confirmed models (so far!):
 * FlashForge Finder 1
+* FlashForge Finder 2 (Thanks @Ghitim)
 * FlashForge Adventurer 3 (Thanks @jptrsn)
 * FlashForge Adventurer 4 (Thanks @vazman13)
 * FlashForge Adventurer 5M Pro (Thanks @JMcrafter26)
+* FlashForge AD5X (Thanks @Ghitim)
 
 # Warning
 Use at your own risk. It only does reading operations but it is unofficial and may of course have bugs etc.
